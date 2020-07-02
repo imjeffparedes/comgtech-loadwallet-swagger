@@ -237,15 +237,6 @@ securityDefinitions:
     type: basic
 security:
   - basicAuth: []
-components:
-
-  Request:
-    type: "object"
-    properties:
-      tranId:
-        type: "string"
-        description: "Transaction ID"
-        example: j82yn34s92b
 definitions:
   Transaction:
     type: "object"
@@ -282,6 +273,10 @@ definitions:
         format: "double"
         description: "Service fee"
         example: 10.00
+      callbackUrl: 
+        type: string
+        description: "Client notification endpoint"
+        example: "http://your.company.com/bills-payment/result"
       code:
         type: "string"
         description: "Billspay status code"
@@ -299,7 +294,7 @@ definitions:
         type: "string"
         description: "Short description of transaction status"
         example: Transaction is pending
-      settlement:
+      settlements:
         type: "object"
         description: "List of key-value pair of parameters from provider details"
         example:
@@ -321,12 +316,12 @@ definitions:
         type: "string"
         format: "date-time"
         description: "UTC Timestamp where transaction is created"
-        example: 07/02/2020 12:00:00
+        example: "2020-07-01T07:18:55.000Z"
       updatedDate:
         type: "string"
         format: "date-time"
         description: "UTC Timestamp where transaction is last updated"
-        example: 07/03/2020 12:00:00
+        example: "2020-07-01T07:18:55.000Z"
   Biller:
     type: "object"
     properties:
