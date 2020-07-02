@@ -273,6 +273,16 @@ definitions:
         format: "double"
         description: "Service fee"
         example: 10.00
+      charge:
+        type: "number"
+        format: "double"
+        description: "Amount deducted to wallet"
+        example: 110.00
+      balance:
+        type: "number"
+        format: "double"
+        description: "Updated wallet balance after charge"
+        example: 890.00
       callbackUrl: 
         type: string
         description: "Client notification endpoint"
@@ -302,16 +312,6 @@ definitions:
           date_posted: 07/03/2020
         additionalProperties:
           type: string
-      charge:
-        type: "number"
-        format: "double"
-        description: "Amount deducted to wallet"
-        example: 110.00
-      balance:
-        type: "number"
-        format: "double"
-        description: "Updated wallet balance after charge"
-        example: 890.00
       createdDate:
         type: "string"
         format: "date-time"
